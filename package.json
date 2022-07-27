@@ -1,0 +1,25 @@
+{
+  "name": "team-dash",
+  "version": "1.0.0",
+  "description": "An easy to use dashboard showing an employers team",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DronetDevDesign/team-dash.git"
+  },
+  "author": "Ron Dronet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DronetDevDesign/team-dash/issues"
+  },
+  "homepage": "https://github.com/DronetDevDesign/team-dash#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
