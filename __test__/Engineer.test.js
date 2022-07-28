@@ -5,13 +5,7 @@ test('creates an engineer object', () => {
   const engineer = new Engineer('');
 
   expect(engineer.name).toBe('');
-  expect(engineer.id).toEqual(Number);
+  expect(engineer.id).toEqual(null);
   expect(engineer.email).toBe('');
-  expect(engineer.role).toBe('engineer');
-
-  expect(engineer.data).toEqual(
-  expect.arrayContaining([expect.any(Object)])
-  );
+  expect(engineer.role).toBe('Engineer');
 });
-
-jest.mock('../lib/Employee');

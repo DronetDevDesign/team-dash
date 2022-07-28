@@ -5,15 +5,7 @@ test('creates a manager object', () => {
   const manager = new Manager('');
 
   expect(manager.name).toBe('');
-  expect(manager.id).toEqual(Number);
+  expect(manager.id).toEqual(null);
   expect(manager.email).toBe('');
-  expect(manager.role).toBe('manager');
-
-  expect(manager.data).toEqual(
-  expect.arrayContaining([expect.any(Object)])
-  );
+  expect(manager.role).toBe('Manager');
 });
-
-jest.mock('../lib/Employee');
-
-// console.log(new Employee());
