@@ -17,3 +17,9 @@ test('gets employee data as an object', () => {
   expect(employee.getEmail()).toHaveProperty('email');
   expect(employee.getRole()).toHaveProperty('role');
 });
+
+// test('gets employee data', () => {
+//   const employee = new Employee('');
+
+//   expect(employee.getName()).toEqual(expect.stringContaining(employee.name.toString()));  
+// });
