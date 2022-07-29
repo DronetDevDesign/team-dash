@@ -8,19 +8,68 @@ const questions = [
   {
     type: 'input',
     name: 'name',
-    message: 'What is your name?',
-    validate: (titleInput) => {
-      if (titleInput) {
+    message: "What is the team manager's name? (Required)",
+    validate: (nameInput) => {
+      if (nameInput) {
         return true;
       } else {
-        console.log('Please enter your name!');
+        console.log("Please enter the team manager's name!");
         return false;
       }
     },
   },
+  {
+    type: 'input',
+    name: 'id',
+    message: "What is the team manager's ID? (Required)",
+    validate: (idInput) => {
+      if (idInput) {
+        return true;
+      } else {
+        console.log("Please enter the team manager's ID!");
+        return false;
+      }
+    },
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: "What is the team manager's email address? (Required)",
+    validate: (emailInput) => {
+      if (emailInput) {
+        return true;
+      } else {
+        console.log("Please enter the team manager's email address!");
+        return false;
+      }
+    },
+  },
+  {
+    type: 'input',
+    name: 'officeNumber',
+    message: "What is the team manager's office number? (Required)",
+    validate: (officeNumberInput) => {
+      if (officeNumberInput) {
+        return true;
+      } else {
+        console.log("Please enter the team manager's office number!");
+        return false;
+      }
+    },
+  },
+  // {
+  //   type: 'checkbox',
+  //   name: 'employee',
+  //   message: "Please choose Engineer, Intern or Exit to finished building your team?",
+  //   choices: [
+  //     "Engineer",
+  //     "Intern",
+  //     "Exit"  
+  //   ],
+  // },
 ]
 
-// function that write index.html file
+// function that writes index.html file
 function writeToFile(fileName, data) {
   console.log(data);
 

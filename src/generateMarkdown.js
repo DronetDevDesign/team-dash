@@ -1,3 +1,5 @@
+const Employee = require('../lib/Employee');
+
 // function used to toggle github or school choice selected by manager.
 choiceData = (choice) => {
   let selectedChoice = '';
@@ -8,7 +10,7 @@ choiceData = (choice) => {
   } else {
     selectedChoice = `Office number: ${data}`;
   }
-  console.log(choice);
+  return selectedChoice;
 }
 
 // function that generates the html markdown
@@ -36,14 +38,15 @@ generateMarkdown = (data) => {
       <div class="card-header">
         <div class="card-header-content">
           <h1 class="employee-name">${data.name}</h1>
-          <h3 class="employee-role">${data.role}</h3>
+          <h3 class="employee-role">${data.Employee}</h3>
         </div>
       </div>
+      
       <div class="employee-data">
         <ul class="data-list">
-          <li class="list-item">ID:${data.id}</li>
+          <li class="list-item">ID: ${data.id}</li>
           <li class="list-item">Email: <a href = "mailto: ${data.email}">${data.email}</a></li>
-          <li class="list-item">${choiceData.data}</li>
+          <li class="list-item">${data.Employee}</li>
         </ul>
       </div>
     </div>
