@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  padding: 0; 
+  margin: 0; 
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Helvetica Neue";
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+}
+
+.header-title {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  font-size: 67px;
+  font-weight: 900;
+  line-height: 65px;
+  padding-top: 20px;
+  color: #ffd015;
+  left: 8px;
+}
+
+.dash {
+  position: relative;
+  font-size: 96px;
+  color: #d69600;
+  left: -7px;
+  z-index: 10;
+}
+
+.dash-word {
+  position: relative;
+  left: -18px;
+}
+
+.subhead {
+  font-size: 26px;
+  font-weight: 400;
+  color: #d69600;
+  padding-bottom: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(140, 187, 206);
+  width: 80%;
+  margin: 40px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.employee-card {
+  margin: 15px;
+  border-radius: 5px;
+  background-color: white;
+  width: 220px;
+  height: 280px;
+  box-shadow: 0 0 14px rgb(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #1b1b1b;
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.card-header-content {
+  padding: 15px
+}
+
+.employee-name {
+  color: #ffd015;
+}
+
+.employee-role {
+  color: #d69600;
+}
