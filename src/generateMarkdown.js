@@ -3,7 +3,8 @@ const Employee = require('../lib/Employee');
 // function that generates the html markdown
 generateMarkdown = (data) => {
   // console.log(data);
-  const { name, id, email, role } = data;
+  const { name, id, email, role } = data[0]; //testing for a single employee
+  console.log(data);
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -25,16 +26,16 @@ generateMarkdown = (data) => {
     <div class="employee-card">
       <div class="card-header">
         <div class="card-header-content">
-          <h1 class="employee-name">${data.name}</h1>
-          <h3 class="employee-role">${data.employee[0]}</h3>
+          <h1 class="employee-name">${name}</h1>
+          <h3 class="employee-role">${role}</h3>
         </div>
       </div>
       
       <div class="employee-data">
         <ul class="data-list">
-          <li class="list-item"><strong>ID:</strong> ${data.id}</li>
-          <li class="list-item"><strong>Email:</strong><a href = "mailto: ${data.email}"> ${data.email}</a></li>
-          <li class="list-item">${data.employee[0]}</li>
+          <li class="list-item"><strong>ID:</strong> ${id}</li>
+          <li class="list-item"><strong>Email:</strong><a href = "mailto: ${email}"> ${email}</a></li>
+          <li class="list-item">${role}</li>
         </ul>
       </div>
     </div>
