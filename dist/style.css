@@ -36,7 +36,7 @@ header {
 .dash {
   position: relative;
   font-size: 96px;
-  color: #d69600;
+  color: #ba8601;
   left: -7px;
   z-index: 10;
 }
@@ -49,7 +49,7 @@ header {
 .subhead {
   font-size: 26px;
   font-weight: 400;
-  color: #d69600;
+  color: #ba8601;
   padding-bottom: 30px;
 }
 
@@ -66,31 +66,33 @@ header {
 .employee-card {
   margin: 15px;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: #ececec;
   width: 240px;
   height: auto;
-  box-shadow: 5px 5px 8px rgb(0, 0, 0, 0.3);
+  /* box-shadow: 5px 5px 8px rgb(0, 0, 0, 0.3); */
   overflow: hidden;
-  border: 1px solid #e8e8e8;
+  /* border: 1px solid #e8e8e8; */
 }
 
 .card-header {
   background-color: #1b1b1b;
-  height: 90px;
+  height: auto;
   margin-bottom: 20px;
 }
 
 .card-header-content {
-  padding: 15px
+  padding: 20px
 }
 
 .employee-name {
+  font-size: 26px;
   color: #ffd015;
+  padding-bottom: 8px;
 }
 
 .employee-role {
-  color: #d69600;
-  font-size: 20px;
+  color: #ba8601;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -101,13 +103,17 @@ header {
 }
 
 .data-list {
+  border-radius: 8px;
   list-style-type: none;
   background-color: white;
   margin: 8px 8px 20px 8px;
+  overflow: hidden;
 }
 
 .list-item {
+  text-align: left;
+  align-items: center;
   padding: 10px 15px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #ececec;
   font-size: 13px;
 }
