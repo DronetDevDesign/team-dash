@@ -2,7 +2,7 @@ const Engineer = require('../lib/Engineer');
 const Employee = require('../lib/Employee');
 
 test('creates an engineer object', () => {
-  const engineer = new Engineer('');
+  const engineer = new Engineer('', null, '');
 
   expect(engineer.name).toBe('');
   expect(engineer.id).toEqual(null);

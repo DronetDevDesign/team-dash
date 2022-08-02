@@ -92,28 +92,32 @@ header {
 .employee-name {
   font-size: 26px;
   color: #ffd015;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
 }
 
 .coffee {
   position: relative;
-  font-size: 21px;
+  font-size: 17px;
   align-items: center;
-  top: 4px;
+  top: 3px;
+  padding-right: 5px;
 }
 
 .glasses {
   position: relative;
   font-size: 21px;
   align-items: center;
-  top: 4px;
+  top: 5px;
+  padding-right: 5px;
 }
+
 
 .school {
   position: relative;
-  font-size: 21px;
+  font-size: 17px;
   align-items: center;
-  top: 4px;
+  top: 1px;
+  padding-right: 5px;
 }
 
 .employee-role {

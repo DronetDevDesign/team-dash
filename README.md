@@ -1,58 +1,40 @@
-# team-dash
-An easy to use dashboard showing an employers team
+# Team>Dash
+## An easy to use employee information dashboard!
 
-├── __tests__/             //jest tests
-│   ├── Employee.test.js
-│   ├── Engineer.test.js
-│   ├── Intern.test.js
-│   └── Manager.test.js
-├── dist/                  // rendered output (HTML) and CSS style sheet      
-├── lib/                   // classes
-├── src/                   // template helper code 
-├── .gitignore             // indicates which folders and files Git should ignore
-├── index.js               // runs the application
-└── package.json           
+## Purpose:
+The Team>Dash app is an HTML file generator that works using the command line. a manager simply inputs employee information when prompted to created a professional looking and easy to read HTML landing page.
 
-notes: MUST HAVE--
 
-Employee parent class must have:
+<br>
+<div align="left">
+    <img src="./dist/images/team-dash-screenshot.jpg" width="800px" /> 
+</div>
+<br>
 
-name
+## Viewable Responsive Screen Sizes:
+* Desktop: 1800px
+* Media Query Sizes:
+  - 980px (Desktop - laptops)
+  - 768px (Laptop - tablets)
+  - 575px (Small devices - large cell phones)
 
-id
+## Website Link:
+https://dronetdevdesign.github.io/Mood-Flix/
 
-email
+## This Website Created Using:
+* HTML 
+* CSS
+* JavaScript
+* NodeJS 
+* Inquirer
+* Jest 
+* GoogleFonts 
+* GitHub
+* IonIcons
 
-getName()
 
-getId()
+## Graphic Software Used:
+* Adobe Photoshop
 
-getEmail()
-
-getRole() // Returns 'Employee'
-
-The other three classes will extend Employee.
-
-In addition to Employee's properties and methods, Manager will also have:
-
-officeNumber
-
-getRole() // Overridden to return 'Manager'
-
-In addition to Employee's properties and methods, Engineer will also have:
-
-github // GitHub username
-
-getGithub()
-
-getRole() // Overridden to return 'Engineer'
-
-In addition to Employee's properties and methods, Intern will also have:
-
-school
-
-getSchool()
-
-getRole() // Overridden to return 'Intern'
-
-Finally, although it’s not a requirement, you should consider adding validation to ensure that user input provided is in the proper expected format.
+## Contribution:
+Ron Dronet

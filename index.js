@@ -199,7 +199,7 @@ askManager = (questions) => {
       if (choice === 'Engineer') {
         renderEngineer()
           .then((engineerAnswers) => {
-            console.log(engineerAnswers);
+            console.log('engineerAnswers:', engineerAnswers);
             const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github)
             employeeArray.push(engineer);
             
@@ -213,7 +213,7 @@ askManager = (questions) => {
       if (choice === 'Intern') {
         renderIntern()
           .then((internAnswers) => {
-            console.log(internAnswers);
+            console.log('internAnswers:', internAnswers);
             const intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.schoolName)
             employeeArray.push(intern);
           })
