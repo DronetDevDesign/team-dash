@@ -19,6 +19,8 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #1b1b1b;
+  background-image: url(./images/header-bkgrd.png);
+  background-position: 52% 50%;
 }
 
 .header-title {
@@ -71,11 +73,14 @@ header {
   height: auto;
   /* box-shadow: 5px 5px 8px rgb(0, 0, 0, 0.3); */
   overflow: hidden;
-  /* border: 1px solid #e8e8e8; */
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .card-header {
   background-color: #1b1b1b;
+  background-image: url(./images/card-bkgrd.png);
+  background-position: 15%;
+  background-size: 190%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -88,6 +93,27 @@ header {
   font-size: 26px;
   color: #ffd015;
   padding-bottom: 8px;
+}
+
+.coffee {
+  position: relative;
+  font-size: 21px;
+  align-items: center;
+  top: 4px;
+}
+
+.glasses {
+  position: relative;
+  font-size: 21px;
+  align-items: center;
+  top: 4px;
+}
+
+.school {
+  position: relative;
+  font-size: 21px;
+  align-items: center;
+  top: 4px;
 }
 
 .employee-role {

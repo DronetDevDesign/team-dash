@@ -8,73 +8,16 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const employeeArray = [];
 
-// array of questions when prompted
-const questions = [
-  {
-    type: 'input',
-    name: 'name',
-    message: "What is the team manager's name? (Required)",
-    validate: (nameInput) => {
-      if (nameInput) {
-        return true;
-      } else {
-        console.log("Please enter the team manager's name!");
-        return false;
-      }
-    },
-  },
-  {
-    type: 'input',
-    name: 'id',
-    message: "What is the team manager's ID? (Required)",
-    validate: (idInput) => {
-      if (idInput) {
-        return true;
-      } else {
-        console.log("Please enter the team manager's ID!");
-        return false;
-      }
-    },
-  },
-  {
-    type: 'input',
-    name: 'email',
-    message: "What is the team manager's email address? (Required)",
-    validate: (emailInput) => {
-      if (emailInput) {
-        return true;
-      } else {
-        console.log("Please enter the team manager's email address!");
-        return false;
-      }
-    },
-  },
-  {
-    type: 'input',
-    name: 'officeNumber',
-    message: "What is the team manager's office number? (Required)",
-    validate: (officeNumberInput) => {
-      if (officeNumberInput) {
-        return true;
-      } else {
-        console.log("Please enter the team manager's office number!");
-        return false;
-      }
-    },
-  },
-]
-
 // function that writes index.html file
-function writeToFile(fileName, data) {
-  console.log(data);
+function writeToFile(fileName) {
 
-  fs.writeFile('./dist/index.html', generateMarkdown(data), err => {
+  fs.writeFile('./dist/index.html', generateMarkdown(employeeArray), err => {
     if (err) {
       throw new Error(err);
     }
   });
 }
-
+// Manager prompt questions:
 renderManager = () => {
   return inquirer.prompt([
     {
@@ -131,7 +74,7 @@ renderManager = () => {
     },
   ])
 }
-
+// Engineer prompt questions:
 renderEngineer = () => {
   return inquirer.prompt([
     {
@@ -188,9 +131,9 @@ renderEngineer = () => {
     },
   ]);
 }
-
-renderIntern = (internData) => {
-  return inquire.prompt([
+// Intern prompt questions:
+renderIntern = () => {
+  return inquirer.prompt([
     {
       type: 'input',
       name: 'name',
@@ -232,10 +175,10 @@ renderIntern = (internData) => {
     },
     {
       type: 'input',
-      name: 'officeNumber',
+      name: 'schoolName',
       message: "What is the intern's school name? (Required)",
       validate: (schoolNameInput) => {
-        if (officeNumberInput) {
+        if (schoolNameInput) {
           return true;
         } else {
           console.log("Please enter the intern's school name!");
@@ -247,47 +190,45 @@ renderIntern = (internData) => {
 }
 
 askManager = (questions) => {
-  //pass an array of questions to enquirer
+  //pass an array of questions to inquirer
   inquirer.prompt(questions)
     .then(answerObject => {
       const choice = answerObject.confirmAddEmployee[0];
       console.log(choice);
+      // If manager chooses to add an engineer
       if (choice === 'Engineer') {
         renderEngineer()
           .then((engineerAnswers) => {
             console.log(engineerAnswers);
             const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github)
             employeeArray.push(engineer);
-            /**
-             * We're mapping through an array of contrusctor objects
-             * -- the iteration we are currently in is a Engineer object, and
-             * -- we want to add certain things from this Engineer in a literal string
-             * return `This engineer named ${obj.name} likes banana pudding`
-             * 
-             * 
-             * 
-             */
+            
           })
           .then(() => askManager(questions))
           .catch((err) => {
             throw err;
           })
       }
+      // If manager chooses to add an intern
+      if (choice === 'Intern') {
+        renderIntern()
+          .then((internAnswers) => {
+            console.log(internAnswers);
+            const intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.schoolName)
+            employeeArray.push(intern);
+          })
+          .then(() => askManager(questions))
+          .catch((err) => {
+            throw err;
+          })
+      }
+      // If manager chooses to exit then the index.html file will be generated
       if (choice === 'Exit') {
-        writeToFile('./dist/index.html', employeeArray);
+        writeToFile('./dist/index.html');
       }
     }).catch((err) => {
       throw err;
     });
-  //then check the answers for which role we need to render
-  //if Engineer, then renderEngineer, and process answers
-  //-- add answers for this role into our overall data object array for all
-  //-- the roles we need to generate a string for
-  //if Intern
-  // -- process the same way as Engineer, but for intern
-  //if Exit
-  // -- get the data object with all the role properties, and initialize our generate with this data
-
 }
 
 // function to initialize app
@@ -298,7 +239,8 @@ function init() {
       const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber)
       employeeArray.push(manager);
       return true;
-    }).then(() => {
+    })
+    .then(() => {
       askManager({
         type: 'checkbox',
         name: 'confirmAddEmployee',
@@ -309,60 +251,8 @@ function init() {
           "Exit"
         ],
       })
-    }).catch((error) => { throw error;})
-  
+    }).catch((error) => { throw error; })
   return;
-  /*
-  // .then((answers) => {
-  //   console.log(answers);
-  //   const mainManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-  //   employeeArray.push(mainManager);
-  //   console.log(employeeArray[0].getRole());
-  //   inquirer.prompt({
-  //     type: 'checkbox',
-  //     name: 'confirmAddEmployee',
-  //     message: "Please choose Engineer, Intern or Exit to finished building your team?",
-  //     choices: [
-  //       "Engineer",
-  //       "Intern",
-  //       "Exit"
-  //     ],
-  //   })
-  //     .then((data) => {
-  //       console.log(data)
-  //       if (data.engineerData === 'Engineer') {
-  //         renderEngineer(engineerData);
-  //       }
-  //     })
-  //     .then((data) => {
-  //       console.log(data)
-  //       if (data.internData === 'Intern') {
-  //         renderIntern(internData);
-  //       }
-  //     })
-    writeToFile('./dist/index.html', answers);
-  // })
-  // .catch((error) => {
-  //   if (error.isTypeError) {
-  //     throw new Error('TypeError' + error.message);
-  //   } else {
-  //     throw new Error(error);
-  //   }
-  // }); */
 }
-
 // initialize app
 init();
-
-// choiceData = (choice) => {
-//   let selectedChoice = '';
-//   if ('Intern') {
-//     return selectedChoice.data;
-//   } else if ('Engineer') {
-//     return selectedChoice.data;
-//   } else {
-//     selectedChoice = `Office number: ${data}`;
-//   }
-//   return selectedChoice;
-// }
-
