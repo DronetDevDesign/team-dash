@@ -35,7 +35,7 @@ ${employeeArray.map(employee => {
           <li class="list-item"><strong>ID:</strong> ${employee.getId()}</li>
           <li class="list-item"><strong>Email:</strong><a href = "mailto: ${employee.getEmail()}"> ${employee.getEmail()}</a></li>
           ${role === 'Manager' ? `<li class="list-item"><strong>Office Number:</strong> ${employee.officeNumber}</li>` : ''}
-          ${role === 'Engineer' ? `<li class="list-item"><strong>Github:</strong> <a href ="https://github.com/${employee.getGithub()}">${employee.getGithub()}</a></li>` : ''}
+          ${role === 'Engineer' ? `<li class="list-item"><strong>Github:</strong> <a href ="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a></li>` : ''}
           ${role === 'Intern' ? `<li class="list-item"><strong>School:</strong> ${employee.getSchool()}</li>` : ''}
         </ul>
       </div>
