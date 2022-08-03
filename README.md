@@ -2,7 +2,7 @@
 ## An easy to use employee information dashboard!
 
 ## Purpose:
-The Team Dash app is an HTML file generator that works using the command line. a manager simply inputs employee information when prompted to created a professional looking and easy to read HTML landing page.
+The Team Dash app is an HTML file generator that works using the command line. A manager simply inputs employee information when prompted to created a professional looking and easy to read HTML landing page.
 
 ## **Table of contents:**
   * [Installation](#installation)
